@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
     branches:
-      - development
+      - development, staging
 jobs:
   Deploy:
     name: Deploy
