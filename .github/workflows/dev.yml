@@ -22,8 +22,7 @@ jobs:
         script: |
           cd /opt/branching
           echo ${{ secrets.PASSWORD }} | sudo -S git pull https://github.com/Ram5535/branching.git
-          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/branching/code.sh
-          echo ${{ secrets.PASSWORD }} | sudo -S /opt/branching/code.sh
+        
           
           
         
