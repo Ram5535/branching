@@ -20,9 +20,12 @@ jobs:
         gituser: ${{ secrets.GIT_USER }}
         token: ${{ secrets.GIT_TOKEN }}
         script: |
-          cd /opt/main/Backend-code
-          echo ${{ secrets.PASSWORD }} | sudo -S git pull https://${{ secrets.GIT_USER }}:${{ secrets.GIT_TOKEN }}@github.com/SocialSwagHQ/Backend-code.git
-          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/main/Backend-code/codeupdate.sh
-          echo ${{ secrets.PASSWORD }} | sudo -S /opt/main/Backend-code/codeupdate.sh
+          cd /opt/branching
+          echo ${{ secrets.PASSWORD }} | sudo -S git pull https://github.com/Ram5535/branching.git
+          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/branching/code.sh
+          echo ${{ secrets.PASSWORD }} | sudo -S /opt/branching/code.sh
+          
+          
+        
 
     
