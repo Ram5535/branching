@@ -1,4 +1,4 @@
-name: Deployement
+name: test-dep
 
 on:  
   push:
@@ -23,8 +23,6 @@ jobs:
           cd /opt/branching
           echo ${{ secrets.PASSWORD }} | sudo -S git checkout staging
           echo ${{ secrets.PASSWORD }} | sudo -S git pull https://github.com/Ram5535/branching.git
-          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/branching/code1.sh
-          echo ${{ secrets.PASSWORD }} | sudo -S /opt/branching/code1.sh
           
           
         
