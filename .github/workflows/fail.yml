@@ -1,0 +1,30 @@
+name: test-fail
+
+on:  
+  push:
+  pull_request:
+    branches:
+      - staging
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        gituser: ${{ secrets.GIT_USER }}
+        token: ${{ secrets.GIT_TOKEN }}
+        script: |
+          cd /opt/branching
+          echo ${{ secrets.PASSWORD }} | sudo -S git checkout staging
+          echo ${{ secrets.PASSWORD }} | sudo -S git pull
+          
+          
+        
+
+    
