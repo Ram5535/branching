@@ -21,6 +21,7 @@ jobs:
         token: ${{ secrets.GIT_TOKEN }}
         script: |
           cd /opt/branching
+          echo ${{ secrets.PASSWORD }} | sudo -S git checkout development
           echo ${{ secrets.PASSWORD }} | sudo -S git pull https://github.com/Ram5535/branching.git
         
           
